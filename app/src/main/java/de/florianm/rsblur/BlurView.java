@@ -64,13 +64,13 @@ public class BlurView extends View {
         borderRadius = typedArray.getDimensionPixelSize(R.styleable.BlurView_bvBorderRadius, 0);
 
         float elevation = 0.0f;
-        if(typedArray.hasValue(R.styleable.BlurView_bvElevation)){
+        if (typedArray.hasValue(R.styleable.BlurView_bvElevation)) {
             elevation = typedArray.getDimensionPixelSize(R.styleable.BlurView_bvElevation, 0);
         } else {
             elevation = typedArray.getDimensionPixelSize(R.styleable.BlurView_android_elevation, 0);
         }
 
-        if(0 < elevation){
+        if (0 < elevation) {
             setShadowBlurRadius(elevation);
         }
 
@@ -122,9 +122,9 @@ public class BlurView extends View {
         Log.d(TAG, "doLayout()");
 
         float left = getPaddingLeft() + shadowBlurRadius;
-        float top = getPaddingTop() + shadowBlurRadius;
+        float top = getPaddingTop() + (shadowBlurRadius / 2.0f);
         float right = getWidth() - getPaddingRight() - shadowBlurRadius;
-        float bottom = getHeight() - getPaddingBottom() - shadowBlurRadius;
+        float bottom = getHeight() - getPaddingBottom() - shadowBlurRadius - (shadowBlurRadius / 2.0f);
         figurePath.reset();
         figurePath.addRoundRect(left, top, right, bottom,
                 borderRadius, borderRadius,
