@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BlurView">
+        <attr name="bvBorderRadius" format="dimension" />
+        <attr name="bvElevation" format="dimension" />
+        <attr name="android:elevation" />
+    </declare-styleable>
+    
+</resources>
